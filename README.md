@@ -1,0 +1,2 @@
+# maily
+🚀 maily project
