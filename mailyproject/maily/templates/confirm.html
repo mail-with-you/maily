@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maily</title>
+    <link href="{% static 'images/m_maily.svg' %}" rel="shortcut icon" type="image/x-icon">
+    <meta property="og:title" content="maily로 내 메일 탄소 발자국 확인하러가기">
+    <meta property="og:description" content="">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+</head>
+
+<body>
+    <div class="header">
+        <img src="{% static 'images/header_logo.png' %}" alt="" class="logo">
+    </div>
+    <section>
+        <div class="saveText">
+            <h2>{{mail_list|length}}개의 <span>메일 삭제,</span>
+                <br>탄소 {{mail_size}}kg <span>절약</span>
+            </h2>
+        </div>
+    </section>
+    <div class="deleteText">
+        <h3>{{mail_list|length}}개의 메일이 선택되었습니다. <br>
+            [메일 삭제하기] 버튼을 누르면 아래 선택한 메일이 삭제됩니다.<br>
+            다시 선택하시려면 페이지 하단의 필터링 다시하러가기를 눌러주세요.
+        </h3>
+    </div>
+    <form action='result'>
+        <span id="delete">
+            <input type="submit" value="메일 삭제하기" onclick="" class="btnDelete">
+            {% for m in mail_list %}
+                <div class='bg_gray deleteSelect'>
+                    <div style="width: 25%;">
+                        <div class='deleteTopside'>{{m.name}}</div>
+                        <div class='dlelteBottomside'>{{m.sentTime}}</div>
+                    </div>
+                    <div style="width: 65%;">
+                        <div class='deleteTopside'>{{m.subject}}</div>
+                        <div class='dlelteBottomside'>{{m.size}}KB</div>
+                    </div>
+                    <input type="checkbox" name='mailSN' value='{{m.mailSN}}' checked>
+                </div>
+            {% endfor %}
+        </span>
+        <input type="text" name='id' value='{{id}}' style="display: none;">
+        <input type="text" name='mail_list_length' value='{{mail_list|length}}' style="display: none;">
+        <input type="text" name='mail_size' value='{{mail_size}}' style="display: none;">
+        </form>
+        <button onclick="history.back()" class='btnDelete'>필터링 다시하러가기</button>
+    <section>
+        <div class="bottomText">
+            <h3>ⓒ 2021. 메일그대와 all rights reserved.</h3>
+        </div>
+    </section>
+</body>
+</html>

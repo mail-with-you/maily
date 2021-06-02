@@ -1,0 +1,468 @@
+/*commom*/
+* {
+  margin: 0px;
+  padding: 0px;
+  color: #191919;
+}
+body {
+  width: 375px;
+  height: auto;
+  margin: auto;
+}
+.header {
+  margin-top: 38.1px;
+  padding-left: 24px;
+}
+.logo {
+  width: 119.2px;
+  height: 38.85px;
+}
+.bottomText {
+  text-align: center;
+  padding-bottom: 50px;
+  font-size: 12px;
+  margin-top: 100px;
+}
+.bottomText h3 {
+  color: #dbdbdb;
+}
+/* home */
+.home {
+  color: #191919;
+}
+
+header {
+  margin-left: 24px;
+  margin-top: 38.1px;
+}
+.arrowLogo {
+  position: fixed;
+  bottom: 70px;
+  right: 70px;
+}
+header h1 {
+  font-size: 36px;
+}
+
+header p {
+  font-size: 13.5px;
+  margin-top: 5px;
+}
+
+.landingText {
+  text-align: center;
+}
+
+.landingText h3 {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+.landingText p {
+  font-size: 12px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.carbonGraph {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.carbonGraph div {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+.carbonGraphIndex {
+  font-size: 12px;
+}
+.carbonGraphIndex div {
+  margin: 2px 1px;
+}
+
+.carbonGraphValue {
+  font-size: 12px;
+  color: #999999;
+}
+.carbonGraphValue div {
+  margin: 2px 1px;
+}
+.carbonGraphValue b {
+  color: #191919;
+}
+
+.graphBar {
+  height: 5px;
+  margin: 6.9px 10px;
+}
+
+.bg_blue {
+  background-color: #29b5ff;
+}
+
+.bg_red {
+  background-color: #ff5d50;
+}
+
+.bg_gray {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f8fa;
+  padding: 30px;
+  padding-bottom: 0px;
+}
+
+.bg_gray p {
+  color: #dbdbdb;
+  font-size: 12px;
+}
+
+hr {
+  border: solid 1px #ededed;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.bottomText {
+}
+
+/* ---------------------------------------------------------------- */
+
+/*report, result  commom */
+
+.resultText {
+  margin-left: 24px;
+  margin-top: 7px;
+  margin-bottom: 10px;
+}
+.resultText h2 {
+  font-size: 28px;
+  font-weight: bold;
+}
+.resultText h2 span {
+  font-weight: normal;
+}
+.result {
+  display: flex;
+  justify-content: space-around;
+}
+.resultImg {
+  text-align: center;
+  width: 327px;
+  height: 266px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.16);
+}
+
+/* report------------------------------------------------*/
+
+.resultImg .cupImg {
+  width: 100px;
+  margin-top: 55.3px;
+  margin-bottom: 20px;
+}
+
+.resultImgBox {
+  height: 200px;
+}
+.resultImg h3 {
+  font-size: 14px;
+  font-weight: normal;
+}
+.resultImg h3 span {
+  font-weight: bold;
+}
+.summaryNumber {
+  color: #191919;
+}
+.summary {
+  margin-top: 32px;
+  margin-left: 24px;
+  margin-bottom: 30px;
+}
+.summaryBindingBox {
+  display: flex;
+  justify-content: space-around;
+}
+.summaryBindingBox ul li {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+.summaryBindingBox ul {
+  margin-top: 25px;
+}
+.summary h3 {
+  font-size: 16px;
+}
+.summary ul {
+  display: inline-block;
+}
+.summary ul li {
+  list-style: none;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+.summary hr {
+  width: 327px;
+  border: solid 1px #ededed;
+  margin-top: 12px;
+  margin-bottom: 16px;
+}
+.summaryContents {
+  display: inline;
+}
+.summaryNumber {
+  margin-left: 16px;
+}
+.btnDelete {
+  margin-left: 24px;
+  border: 0px solid;
+  width: 327px;
+  height: 52px;
+  background-color: #29b5ff;
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 42px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.most {
+  margin-left: 24px;
+}
+
+.mostContents {
+  width: 327px;
+  padding: 0;
+}
+.mostContents h3 {
+  margin-bottom: 20px;
+}
+
+.mostList {
+  margin: 15px 0;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+}
+.mostList .rank {
+  width: 15%;
+  font-size: 20px;
+}
+.mostList div:nth-child(2) {
+  width: 50%;
+  font-size: 15px;
+}
+.mostList div:nth-child(3) {
+  width: 20%;
+}
+.capa {
+  font-size: 14px;
+}
+.carbon {
+  font-size: 11px;
+  color: #999999;
+}
+
+.mostContents hr {
+  margin: 0 10px;
+}
+
+/* result ---------------------------------------------------*/
+.resultImg #outline {
+  background-image: url(passImg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.resultImg h2 {
+  margin-top: 35px;
+}
+.resultImg .line {
+  margin-top: 2px;
+  border: 0.5px solid #ededed;
+  margin-left: 32px;
+  margin-right: 32px;
+}
+.resultImg .userName {
+  margin-top: 15px;
+  text-align: center;
+  margin-right: 12px;
+}
+.resultImg .certificationText {
+  margin-top: 10px;
+  height: 102.5px;
+}
+.resultImg .certificationText .resultDate {
+  display: inline-block;
+  flex-flow: row;
+}
+.resultImg .certificationText .logoImg {
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.resultImg .logoImg {
+  width: 48.45px;
+  margin-top: 15px;
+}
+.resultText {
+  height: 102.5px;
+}
+.resultImg .resultDate {
+  padding-top: 20px;
+}
+.reject {
+  display: flex;
+  justify-content: space-around;
+}
+
+.rejectMsg {
+  background-color: #f8f8fa;
+  align-items: center;
+  margin-top: 20.1px;
+  width: 327px;
+  height: 60px;
+  border: solid 0px;
+  display: flex;
+  justify-content: space-around;
+}
+.rejectMsg h3 {
+  font-size: 12px;
+  text-align: center;
+}
+
+.rejectMsg h3 a {
+  color: #29b5ff;
+}
+
+.snsLogo {
+  margin-top: 45px;
+  display: flex;
+  justify-content: center;
+}
+.snsLogo a img {
+  width: 32.15px;
+  height: auto;
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+.mailWithYou {
+  height: 72px;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 57.75px;
+  margin-bottom: 22.5px;
+}
+
+.mailWithYou h4 {
+  font-size: 12px;
+  color: #191919;
+  display: inline;
+}
+
+/* delete */
+.saveText {
+  margin-left: 24px;
+  margin-top: 7px;
+  margin-bottom: 10px;
+}
+.saveText h2 {
+  font-size: 28px;
+  font-weight: bold;
+}
+.saveText h2 span {
+  font-weight: normal;
+}
+.save {
+  display: flex;
+  justify-content: space-between;
+}
+
+.deleteText {
+  margin-top: 2px;
+  margin-left: 24px;
+  width: 327px;
+  margin-bottom: 30px;
+}
+
+.deleteText h3 {
+  font-size: 12px;
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+#delete .btnDelete {
+  margin-top: 12px;
+}
+#delete:hover .btnDelete {
+  cursor: pointer;
+}
+
+.summaryVisualize {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.summaryVisualize p {
+  font-size: 12px;
+}
+
+.summaryBar {
+  display: flex;
+  justify-content: space-around;
+  height: 100px;
+  align-items: flex-end;
+}
+
+.verticalBar {
+  width: 5px;
+}
+
+.deleteSelect {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ededed;
+  padding: 15px;
+}
+
+.deleteTopside {
+  font-size: 13px;
+  overflow: hidden;
+}
+.dlelteBottomside {
+  font-size: 11px;
+  color: #999999;
+  overflow: hidden;
+}
+
+#mailChart {
+  margin-left: 15px;
+}
+
+.deleteSorting {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.deleteSorting .btnDelete {
+  margin-left: 0px;
+}
+
+.deleteSorting select {
+  margin-bottom: 20px;
+}
+
+.frame {
+  width: 310px;
+  position: relative;
+  bottom: 205px;
+}
+
+.certificationText .badge {
+  width: 65px;
+  position: relative;
+  left: 100px;
+  bottom: 45px;
+}

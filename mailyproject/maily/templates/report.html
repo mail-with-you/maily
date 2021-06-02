@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maily</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js" integrity="sha512-VCHVc5miKoln972iJPvkQrUYYq7XpxXzvqNfiul1H4aZDwGBGC0lq373KNleaB2LpnC2a/iNfE5zoRYmB4TRDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
+
+    <link href="{% static 'images/m_maily.svg' %}" rel="shortcut icon" type="image/x-icon">
+    <meta property="og:title" content="maily로 내 메일 탄소 발자국 확인하러가기">
+    <meta property="og:description" content="">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+</head>
+
+
+<body>
+    <div class="header">
+        <img src="{% static 'images/header_logo.png' %}" alt="" class="logo">
+    </div>
+    <section>
+        <div class="resultText">
+            <h2>{{id}} <span>님의</span>
+                <br>메일 분석 결과
+            </h2>
+        </div>
+    </section>
+    <div class="result">
+        <div class="resultImg">
+
+            {% if expression == 'computer' %}
+              <div class='resultImgBox'>  <img src="{% static 'images/computer.svg' %}" alt="" class="cupImg"></div>
+                <h3><span>{{id}}</span> 님의 메일이 발생시키는 탄소로
+                    <br><span>pc방 3시간</span>을 이용할 수 있어요.
+                </h3>
+            {% elif expression == 'coffee' %}
+                <div class='resultImgBox'><img src="{% static 'images/coffee.svg' %}" alt="" class="cupImg"></div>
+                <h3><span>{{id}}</span> 님의 메일이 발생시키는 탄소로
+                    <br><span>별다방에서 커피 한잔</span>을 마실 수 있어요.
+                </h3>
+            {% elif expression == 'mic' %}
+                <div class='resultImgBox'><img src="{% static 'images/mic.svg' %}" alt="" class="cupImg"></div>
+                <h3><span>{{id}}</span> 님의 메일이 발생시키는 탄소로
+                    <br><span>코노에서 노래 30곡</span>을 부를 수 있어요.
+                </h3>
+            {% elif expression == 'chicken' %}
+                <div class='resultImgBox'><img style="margin-top: 20px;" src="{% static 'images/chicken.svg' %}" alt="" class="cupImg"></div>
+                <h3><span>{{id}}</span> 님의 메일이 발생시키는 탄소로
+                    <br><span>오늘 저녁은 치킨</span>을 먹을 수 있어요.
+                </h3>
+            {% elif expression == 'book' %}
+                <div class='resultImgBox'><img src="{% static 'images/book.svg' %}" alt="" class="cupImg"></div>
+                <h3><span>{{id}}</span> 님의 메일이 발생시키는 탄소로
+                    <br><span>읽고싶은 책 3권</span>을 구매할 수 있어요.
+                </h3>
+            {% elif expression == 'alchol' %}
+                <div class='resultImgBox'><img src="{% static 'images/alchol.svg' %}" alt="" class="cupImg"></div>
+                <h3><span>{{id}}</span> 님의 메일이 발생시키는 탄소로
+                    <br><span>2차를 긁</span>을 수 있어요.
+                </h3>
+            {% endif %}
+        </div>
+    </div>
+    <div class="summary">
+        <h3>메일 통계 한눈에 보기</h3>
+        <hr>
+        <div class='summaryBindingBox'>
+            <ul class="summaryContents">
+                <li>전체 메일 수</li>
+                <li>안 읽은 메일 수</li>
+                <li><b>총 용량</b></li>
+            </ul>
+            <ul class="summaryNumber">
+                <li>{{totalCount}}</li>
+                <li>{{unreadCount}}</li>
+                <li><b>{{diskUsage}}</b></li>
+            </ul>
+            <div class="summaryVisualize">
+                <canvas style='max-width:80px; max-height: 80px' id="mailChart"></canvas>
+                <p>{{unreadPersent}}%의 안 읽은 메일</p>
+            </div>
+        </div>
+    </div>
+    <div class="most">
+        <h3>메일 용량을 많이 사용한 사람</h3>
+        <div class="bg_gray mostContents">
+            <div class='mostList'>
+                <div class='rank'>01</div>
+                <div>{{first_name}}</div>
+                <div>
+                    <div class='capa'>{{first_capa}}KB</div>
+                    <div class='carbon'>{{first_carbon}}kg</div>
+                </div>
+            </div>
+            <hr>
+            <div class='mostList'>
+                <div class='rank'>02</div>
+                <div>{{second_name}}</div>
+                <div>
+                    <div class='capa'>{{second_capa}}KB</div>
+                    <div class='carbon'>{{second_carbon}}kg</div>
+                </div>
+            </div>
+            <hr>
+            <div class="mostList">
+                <div class='rank'>03</div>
+                <div>{{third_name}}</div>
+                <div>
+                    <div class='capa'>{{third_capa}}KB</div>
+                    <div class='carbon'>{{third_carbon}}kg</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form action='delete'>
+        <input style="display: none;" type="text" value={{id}} name='id'>
+        <input style="display: none;" type="text" value={{cookie}} name='cookie'>
+        <input style="display: none;" type="text" value={{totalCount}} name='totalCount'>
+        <input style="display: none;" type="text" value={{mail_size}} name='mail_size'>
+
+        <input type="submit" name='submit' value='메일 삭제하러 가기' class="btnDelete">
+    </form>
+    <section>
+        <div class="bottomText">
+            <h3>ⓒ 2021. 메일그대와 all rights reserved.</h3>
+        </div>
+    </section>
+</body>
+<script>
+
+
+    let mailChart = document.getElementById('mailChart').getContext('2d');
+
+    let barChart = new Chart(mailChart, {
+        type : 'pie',
+        data : {
+            datasets : [   
+            {
+                data : [
+                    {{unreadCount}},
+                    {{readCount}},
+                ],
+                backgroundColor: ['#ff5d50', '#29b5ff'],
+                barThickness: 5,
+            }
+            ],
+        },
+    }
+    )
+
+
+</script>
+
+</html>

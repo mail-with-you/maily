@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maily</title>
+    <link href="{% static 'images/m_maily.svg' %}" rel="shortcut icon" type="image/x-icon">
+    <meta property="og:title" content="maily로 내 메일 탄소 발자국 확인하러가기">
+    <meta property="og:description" content="">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+</head>
+
+<body>
+    <div class="header">
+        <img src="{% static 'images/header_logo.png' %}" alt="" class="logo">
+    </div>
+    <section>
+        <div class="saveText">
+            <h2>
+                {{totalCount}}개의 <span>메일 삭제하면,</span>
+                <br> 탄소 {{mail_size}}kg <span>절약 </span>
+            </h2>
+        </div>
+    </section>
+    <div class="deleteText">
+        <h3>[메일 삭제하기] 버튼을 누르면 아래 선택한 메일이 삭제됩니다.</h3>
+    </div>
+        <form class='deleteSorting' action='confirm'>
+            <span id="delete">
+                <a href="#"><input type="submit" value="메일 삭제하기" onclick="" class="btnDelete"></a>
+            </span>
+            <div>
+            <select style='width: 150px' name="isRead" id="isRead">
+                <option value="read" selected>읽은 메일</option>
+                <option value="unread">안읽은 메일</option>
+                <option value="both" >모두</option>
+            </select>
+        </div>
+        <div>
+            <select style='width: 150px' name="isMark" id="isMark">
+                <option value="mark" selected>중요한 메일만</option>
+                <option value="unmark">중요한 메일 제외</option>
+                <option value="both" >모두</option>
+            </select>
+        </div>
+            <input style='width: 150px' type="date" value='1998-04-18' id="from_date" name="from_date"> ~
+            <input style='width: 150px' type='date' value='2021-05-02' id="to_date" name='to_date'>
+            <input style="display: none;" type="text" value={{id}} name='id'>
+            <input style="display: none;" type="text" value={{cookie}} name='cookie'>
+            <input style="display:none;" type="text" value={{mail_list}} name='mail_list'>
+        </form>
+    </div>
+    <section>
+        <div class="bottomText">
+            <h3>ⓒ 2021. 메일그대와 all rights reserved.</h3>
+        </div>
+    </section>
+</body>
+</html>

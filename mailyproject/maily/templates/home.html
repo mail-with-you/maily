@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+    {% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js" integrity="sha512-VCHVc5miKoln972iJPvkQrUYYq7XpxXzvqNfiul1H4aZDwGBGC0lq373KNleaB2LpnC2a/iNfE5zoRYmB4TRDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
+    <title>maily</title>
+    <link href="{% static 'images/m_maily.svg' %}" rel="shortcut icon" type="image/x-icon">
+    <meta property="og:title" content="maily로 내 메일 탄소 발자국 확인하러가기">
+    <meta property="og:description" content="">
+</head>
+<body class='home'>
+    <header>
+        <h1><img src="{% static 'images/header_logo.png' %}"  style="width: 119.19px;">와 함께<br>디지털 탄소 절감해요!</h1>
+        <p>maily 탄소 중립 캠페인 알아보기</p>
+    </header>
+    <a href='login'><img class="arrowLogo" src="{% static 'images/arrow.svg' %}" style="width: 70px;"/></a>
+
+    <hr>
+
+    <div class='landingText'>
+        <h3>
+            우리의 메일함 속 방치된 email이<br>
+            탄소를 발생시킵니다.
+        </h3>
+        <p>
+            전화통화, 영상 시청 등 디지털기기로 데이터를 이용할 때 발생하는<br>
+            이산화탄소 총량을 <b>'디지털 탄소발자국'</b>이라고 합니다.
+        </p>
+        <div class='bg_gray'>
+            <div class='carbonGraph'>
+                <div class='carbonGraphIndex'>
+                    <div>youtube 10분 시청</div>
+                    <div>인터넷 검색</div>
+                    <div><b>이메일 한 통</b></div>
+                    <div>전화통화 1분</div>
+                    <div>데이터 1MB 사용</div>
+                </div>
+                <div class='carbonGraphValue'>
+                    <span class='graphBar bg_blue' style="width:15px"></span>
+                    <span class='graphBar bg_blue' style="width:3px"></span>
+                    <span class='graphBar bg_red' style="width:60px"></span>
+                    <span class='graphBar bg_blue' style="width:48px"></span>
+                    <span class='graphBar bg_blue' style="width:165px"></span>
+                </div>
+                <div class='carbonGraphValue'>
+                    <div>1g</div>
+                    <div>0.2g</div>
+                    <div><b>4g</b></div>
+                    <div>3.6g</div>
+                    <div>11g</div>
+                </div>
+            </div>
+            <p>출처: 환경부 국가환경교육센터</p>
+        </div>
+        <p>
+            이메일을 보내거나 방치하는것은, 데이터 유지를 위한 데이터센터의<br>
+            많은 전력 소모 및 <b>탄소 배출을 야기</b>합니다.
+        </p>
+    </div>
+
+    <hr>
+
+    <div class='landingText'>
+        <h3>
+            우리는 매일, 생각보다 많이,<br>
+            탄소를 배출하고 있습니다.
+        </h3>
+
+        <div class='bg_gray'>
+            <canvas id='mailChart'></canvas>
+            <p>서울특별시_이메일 이용률과 이용기기 통계_20201231</p>
+        </div>
+        <p>
+            서울시 이메일 이용자는 <b>66% ~ 67%</b>이며, 그 중 1년 넘게 이메일을<br>
+            사용하지 않은 비율이 12.8%에서 14.3%로 증가하여<br>
+            사용하지 않는 메일들이 쌓이고 있습니다.
+        </p>
+    </div>
+
+    <hr>
+
+    <div class='landingText'>
+        <h3>
+            우리가 탄소절감을 노력하지 않는다면<br>
+            어떻게 될까요?
+        </h3>
+        <img src="{% static 'images/go_logo.jpeg' %}"  style="width: 30%;">
+
+        <p>
+            <br>
+            <b>탄소 중립</b>이란 실질적인 온실가스의 배출량을 <br>
+            0(Zero)이 되게 하는 것으로, 최근 대한민국 정부도<br>
+            지속 가능한 환경 조성을 위한 <b>'2050 탄소중립'</b>정책을 발표하였습니다.
+        </p>
+        <p>
+            이처럼 세계 각국이 탄소절감에 주목하는 이유는 <b>지구온난화</b>로 인해<br>
+            지구의 수명이 줄어들고 있기 때문입니다. 탄소배출을 방치하면<br>
+            지구의 평균 기온이 상승하여 지구의 <b>온도가 2&#8451;이상 상승</b>할 경우<br>
+            인간이 감당 불가능한 <b>자연재해</b>가 발생하게 됩니다</div>
+        </p>
+    </div>
+
+    <hr>
+
+    <div class='landingText'>
+        <h3>
+            메일리로 시작할 수 있습니다.
+        </h3>
+        <img src="{% static 'images/header_logo.png' %}"  style="width: 30%;">
+
+        <p>
+            <br>
+            탄소 중립 실현을 위해, 정부와 기업 그리고 <b>우리 모두</b>가 노력해야합니다.<br>
+            이제부터 메일리를 통해 불필요한 메일을 간단히 분류하고<br>
+            한 번에 삭제하여<b>탄소 절감</b>에 동참해보세요!
+        </p>
+
+    </div>
+
+    <section>
+        <div class="bottomText">
+            <h3>ⓒ 2021. 메일그대와 all rights reserved.</h3>
+        </div>
+    </section>
+
+    <script>
+
+
+        let mailChart = document.getElementById('mailChart').getContext('2d');
+
+        let barChart = new Chart(mailChart, {
+            type : 'bar',
+            data : {
+                labels : ['2016', '2017', '2018', '2019', '2020'],
+                datasets : [
+                {
+                    label : '이메일 이용률',
+                    data : [
+                        67.7,
+                        66.6,
+                        66.6,
+                        67.8,
+                        67.8
+                    ],
+                    backgroundColor: ['#29b5ff'],
+                    barThickness: 5
+                },    
+                {
+                    label : '이용 안한지 1년 넘음',
+                    data : [
+                        12.8,
+                        12.5,
+                        13.9,
+                        14.30,
+                        14.30
+                    ],
+                    backgroundColor: ['#ff5d50'],
+                    barThickness: 5,
+                }
+                ],
+            },
+            options: {
+                scales: {
+                    y: {
+                suggestedMin: 0,
+                suggestedMax: 100
+            }
+        }
+    }
+		}
+        )
+    </script>
+</body>
+</html>

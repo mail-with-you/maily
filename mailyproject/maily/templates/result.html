@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maily</title>
+    <link href="{% static 'images/m_maily.svg' %}" rel="shortcut icon" type="image/x-icon">
+    <meta property="og:title" content="maily로 내 메일 탄소 발자국 확인하러가기">
+    <meta property="og:description" content="안쓰는 메일 지우러 바로가기">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+</head>
+
+<body>
+    <div class="header">
+        <img src="{% static 'images/header_logo.png' %}" alt="" class="logo">
+        </div>
+        <section>
+            <div class="resultText">
+                <h2>{{mail_list_length}}개의 <span>메일 삭제,</span>
+                <br>탄소 {{mail_size}}kg <span>절약</span>
+                </h2>
+            </div>
+        </section>
+        
+        <div class="result">
+            
+            <div class="resultImg">
+                <div>
+                    <h2>Certification</h2>
+                    <div class="line"></div>
+                    <h3 class="userName">contributer <span>{{id}}</span></h3>
+                    <div class="certificationText">
+                        <h3>
+                            위 사람은 maily에서 주관하는 
+                            <br><span>Digital - Eco 탄소 절감 캠페인</span>에 참여하여
+                            <br>탄소 중립 실현에 기여하였음을 인증합니다.
+                        </h3>
+                        <h3 class="resultDate" id='today'></h3><br>
+                        <img src="{% static 'images/header_logo.png' %}" alt="" class="logoImg"><br>
+                        <img class='badge' src="{% static 'images/certification.svg' %}">
+                    </div>
+                </div>
+                <img class='frame' src="{% static 'images/certificate_frame.svg' %}">
+            </div>
+        </div>
+    <div class="reject">
+        <div class="rejectMsg">
+            <h3>불필요한 메일의 구독을 취소하려면 <a href="https://mail.naver.com">수신거부</a>를 하세요. <br>
+                메일이 쌓이는 것을 방지할 수 있습니다. </h3>
+        </div>
+    </div>
+        <div class="snsLogo">
+            <a href="https://instagram.com"><img src="{% static 'images/facebook_image.png' %}" alt=""></a>
+            <a href="https://facebook.com"><img src="{% static 'images/instagram_image.png' %}" alt=""></a>
+            <a href="https://www.kakaocorp.com/kakao/introduce/kakaoCulture"><img src="{% static 'images/kakao_image.png' %}" alt=""></a>
+        </div>
+        <div class="mailWithYou">
+            <h4>만든 사람들
+                <br>-
+                <br>프로젝트 팀 메일 그대와(Mail with you)
+                <br>류창휘 이승연 최다인 최봉수 최유진 
+            </h4>
+        </div>
+        <section>
+        
+            <div class="bottomText">
+                <h3>ⓒ 2021. 메일그대와 all rights reserved.</h3>
+            </div>
+        </section>
+        <script>
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+            var yyyy = today.getFullYear();
+        
+            today = mm + '.' + dd + '.' + yyyy;
+            document.getElementById('today').innerText = today
+        </script>
+</body>
+</html>

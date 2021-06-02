@@ -1,0 +1,145 @@
+body {
+  width: 375px;
+  height: 812px;
+  font-family: "Noto Sans KR", sans-serif;
+  margin: auto;
+  background-color: white;
+}
+
+/* .body {
+  background-color: white;
+} */
+
+.header {
+  margin-top: 38.1px;
+  margin-left: 24px;
+  width: 119.2px;
+  height: 38.85px;
+}
+
+.header img {
+  width: 119.2px;
+  height: 38.85px;
+}
+
+.textInfo {
+  margin-top: 98.1px;
+  margin-left: 24px;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: -1.4px;
+}
+
+.textInfo h1 {
+  font-size: 24px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: bold;
+}
+
+.option_container {
+  margin-left: 24px;
+  display: flex;
+  margin-top: 30px;
+}
+
+.btn_naver {
+  border: solid 2px #dbdbdb;
+  background-color: #ffffff;
+  height: 52px;
+  width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.btn_naver img {
+  width: 20px;
+  margin-right: 6px;
+}
+
+.btn_google {
+  border: solid 2px #dbdbdb;
+  background-color: #ffffff;
+  height: 52px;
+  width: 160px;
+  margin-left: 7px;
+  /* opacity: 0.5; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Noto Sans KR", sans-serif;
+  color: #dbdbdb;
+}
+
+.btn_google img {
+  width: 20px;
+  margin-right: 5px;
+  text-align: center;
+  /* filter: grayscale(100);  */
+  opacity: 0.2;
+}
+
+.login_container {
+  margin-left: 24px;
+  margin-top: 10px;
+}
+
+.name {
+  width: 315px;
+  height: 52px;
+  background-color: #f1f1f5;
+  border: none;
+  padding-left: 12px;
+  margin-bottom: 10px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.pw {
+  width: 315px;
+  height: 52px;
+  background-color: #f1f1f5;
+  border: none;
+  padding-left: 12px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.option_container2 {
+  margin-left: 24px;
+  padding-top: 10px;
+}
+
+.op2 {
+  margin-left: 30px;
+}
+
+.login_btn input {
+  margin-left: 24px;
+  margin-top: 16px;
+  width: 327px;
+  height: 52px;
+  background-color: #29b5ff;
+  border: none;
+  color: white;
+  font-weight: 700;
+}
+
+.account_container {
+  font-size: 12px;
+  text-align: center;
+}
+
+a {
+  color: #29b5ff;
+  text-decoration: none;
+}
+
+.bottom_text {
+  margin-top: 99.5px;
+  font-family: "Noto Sans KR", sans-serif;
+  color: #dbdbdb;
+  font-weight: lighter;
+  font-size: 12px;
+  height: 18px;
+  text-align: center;
+}

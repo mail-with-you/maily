@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maily</title>
+    <link href="{% static 'images/m_maily.svg' %}" rel="shortcut icon" type="image/x-icon">
+    <meta property="og:title" content="maily로 내 메일 탄소 발자국 확인하러가기">
+    <meta property="og:description" content="">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+   
+   
+    
+</head>
+<body>
+    <div class='body'>
+
+        <div class="header">
+            <img src="{% static 'images/header_logo.png' %}" alt="" class="logo">
+        </div>
+        <div class="textInfo">
+            <h1>로그인으로<br>탄소절감<br>빠르게 시작하기</h1>
+        </div> 
+        <div class = "option_container">
+            <button type = "button" class="btn_naver"> <img src="{% static 'images/naver.png'%}" alt="" class="logo"> 네이버 </button>
+            <!-- <button type = "button" class="btn_naver">네이버</button> -->
+            <button type = "button" class="btn_google"> <img src="{% static 'images/google.png'%}" alt="" class="logo">구글 (준비중) </button>
+        </div>
+        <form action='report'>
+            <div class = "login_container">
+                <input type = "text" name = "id" class = "name" placeholder = "아이디를 입력해주세요."><br>
+                <input type = "password" name = "pw" class = "pw" placeholder = "비밀번호를 입력해주세요."><br>
+                {% if messages %}
+                    {% for message in messages %}
+                        <div style="color: #ff5d50">
+                            {{message}}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class = "login_btn">
+                <input type="submit" name='submit' value='조회하기'>
+            </div>  
+        </form>
+
+
+        <div class="account_container">
+            <p>계정을 잊으셨나요? <a href = "https://www.naver.com">ID찾기</a> 또는 <a href = ".html">비밀번호 </a>찾기</p>
+        </div>
+
+
+        <div class="bottom_text">
+            <h3>&copy; 2021. 메일그대와 all rights reserved.</h3>
+        </div>
+    </div>
+    
+</body>
+</html>
