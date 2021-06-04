@@ -370,24 +370,25 @@ def result(request):
     id = request.GET['id']
     mail_list_length = request.GET['mail_list_length']
     mail_size = request.GET['mail_size']
+    cookie = request.GET['cookie']
     # # 휴지통으로 보내기 위해
-    # delete = ''
-    # for i in mailSN:
-    #     delete = delete+i+';'
+    delete = ''
+    for i in mailSN:
+        delete = delete+i+';'
 
     # # 휴지통으로 보내기
-    # headers = {
-    #     'authority': 'mail.naver.com',
-    #     'referer': 'https://mail.naver.com/',
-    #     'cookie': cookie,
-    # }
+    headers = {
+        'authority': 'mail.naver.com',
+        'referer': 'https://mail.naver.com/',
+        'cookie': cookie,
+    }
 
-    # data = {
-    #     'mailSNList': delete,
-    #     'currentFolderType': 'etc',
-    #     'u': id
-    # }
+    data = {
+        'mailSNList': delete,
+        'currentFolderType': 'etc',
+        'u': id
+    }
 
-    # requests.post(
-    #     'https://mail.naver.com/json/select/delete/', headers=headers, data=data)
+    requests.post(
+        'https://mail.naver.com/json/select/delete/', headers=headers, data=data)
     return render(request, 'result.html',  {'mail_list_length': mail_list_length, 'mail_size': mail_size, 'mailSN': mailSN, 'id': id})
